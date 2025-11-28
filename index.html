@@ -6,7 +6,7 @@
   <title>Menú Digital Mariachis</title>
   <script src="/_sdk/element_sdk.js"></script>
   <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:wght@700;900&display=swap');
 
         body {
             box-sizing: border-box;
@@ -57,7 +57,7 @@
         }
 
         .tagline {
-            font-size: 22px;
+            font-size: 20px;
             color: #ffffff;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
@@ -101,10 +101,18 @@
             font-size: 42px;
             color: #8b0000;
             text-align: center;
-            margin: 0 0 40px 0;
+            margin: 0 0 20px 0;
             font-weight: 700;
             letter-spacing: 1px;
             font-family: 'Playfair Display', serif;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            margin: 0 0 40px 0;
+            font-weight: 400;
         }
 
         /* Services Grid */
@@ -180,6 +188,38 @@
             font-weight: 400;
         }
 
+        /* Special styling for combo card */
+        .combo-special-card {
+            opacity: 1 !important;
+            pointer-events: none;
+            background: linear-gradient(135deg, #fff8f0, #ffffff);
+            border: 4px solid #d4af37 !important;
+        }
+
+        .combo-special-card .service-image-placeholder {
+            background: linear-gradient(135deg, #d4af37, #c8a030);
+            font-size: 56px;
+            letter-spacing: 10px;
+            color: #8b0000;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
+        }
+
+        .combo-special-card .service-name {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .combo-special-card .service-price {
+            font-size: 52px;
+        }
+
+        .combo-special-card .service-description {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
         /* Gallery placeholder */
         .gallery-section {
             margin: 60px 0;
@@ -207,6 +247,146 @@
             font-weight: 600;
         }
 
+        /* Combos section */
+        .combos-section {
+            background: linear-gradient(135deg, #fff8f0, #ffffff);
+            border: 4px solid #d4af37;
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 60px 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .combos-title {
+            font-size: 36px;
+            color: #8b0000;
+            text-align: center;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .combos-subtitle {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin: 0 0 35px 0;
+            line-height: 1.6;
+        }
+
+        .combo-item {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .combo-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(200, 16, 46, 0.2);
+        }
+
+        .combo-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #c8102e, #8b0000);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .combo-details {
+            flex-grow: 1;
+        }
+
+        .combo-name {
+            font-size: 18px;
+            color: #8b0000;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+        }
+
+        .combo-price {
+            font-size: 26px;
+            color: #c8102e;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Osita section */
+        .osita-section {
+            background: linear-gradient(135deg, #ffeef8, #ffffff);
+            border: 4px solid #d4af37;
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 40px 0 60px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .osita-title {
+            font-size: 32px;
+            color: #8b0000;
+            text-align: center;
+            margin: 0 0 30px 0;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .osita-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .osita-card {
+            background: white;
+            border: 3px solid #d4af37;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .osita-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .osita-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .osita-name {
+            font-size: 20px;
+            color: #8b0000;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+
+        .osita-price {
+            font-size: 32px;
+            color: #c8102e;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+        }
+
+        .osita-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* Contact section */
         .contact-section {
             background: linear-gradient(135deg, #c8102e, #8b0000);
@@ -227,11 +407,11 @@
         }
 
         .phone-number {
-            font-size: 32px;
+            font-size: 28px;
             color: white;
             margin: 0 0 30px 0;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .whatsapp-button {
@@ -493,6 +673,10 @@
             .section-title {
                 font-size: 28px;
             }
+
+            .phone-number {
+                font-size: 22px;
+            }
             
             .services-grid {
                 grid-template-columns: 1fr;
@@ -514,6 +698,15 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .combo-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .combo-special-card .service-name {
+                font-size: 28px;
+            }
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -524,131 +717,183 @@
   <div class="app-wrapper">
    <header class="header">
     <div class="header-content">
-     <h1 class="band-name" id="bandName">Mariachi Los Guadalupanos</h1>
-     <p class="tagline" id="tagline">Música tradicional mexicana para toda ocasión</p>
+     <h1 class="band-name" id="bandName">Mariachi Show Mexicano</h1>
+     <p class="tagline" id="tagline">5 músicos: 2 trompetas, vihuela, guitarrón y voz femenina</p>
     </div>
    </header>
    <div class="logo-section"><img src="https://i.imgur.com/15WUNSg.png" alt="Logo Mariachi" class="main-logo" onerror="this.style.display='none';">
     <div class="decorative-line"></div>
    </div>
    <main class="main-content">
-    <h2 class="section-title">Nuestros Servicios y Tarifas</h2>
+    <h2 class="section-title">Nuestros Servicios - Plan A</h2>
+    <p class="section-subtitle">🎺 Mariachi Show Mexicano 🎺</p>
     <div class="service-selector">
-     <div class="selector-buttons"><button class="selector-btn active" onclick="switchService('mariachi')">Mariachi</button> <button class="selector-btn" onclick="switchService('retreta')">Retreta Ritmo y Alegría</button>
+     <div class="selector-buttons"><button class="selector-btn active" onclick="switchService('mariachi')">🎺 Mariachi</button> <button class="selector-btn" onclick="switchService('retreta')">🥁 Retreta Ritmo y Alegría</button>
      </div>
     </div><!-- Mariachi Services -->
     <div class="service-group active" id="mariachi-services">
      <div class="services-grid"><!-- Mariachi Service 1 -->
-      <div class="service-card"><img src="https://i.imgur.com/1Jb96As.png" alt="Bodas" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="service-card"><img src="https://i.imgur.com/V8wVdEY.jpg" alt="15 Canciones" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
        <div class="service-image-placeholder" style="display: none;">
-        Foto de bodas aquí
+        🎺 15 Canciones Mariachi
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="mariachi1Name">Bodas</h3>
-        <p class="service-price" id="mariachi1Price">$100</p>
-        <p class="service-description" id="mariachi1Desc">Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.</p>
+        <h3 class="service-name" id="mariachi1Name">15 Canciones</h3>
+        <p class="service-price" id="mariachi1Price">$70</p>
+        <p class="service-description" id="mariachi1Desc">El paquete más completo. 15 canciones a tu elección con nuestro mariachi de 5 músicos.</p>
        </div>
       </div><!-- Mariachi Service 2 -->
-      <div class="service-card"><img src="https://i.imgur.com/2yVfO3c.png" alt="Cumpleaños" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="service-card"><img src="https://i.imgur.com/juJOhMJ.jpg" alt="12 Canciones" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
        <div class="service-image-placeholder" style="display: none;">
-        Foto de cumpleaños aquí
+        🎺 12 Canciones Mariachi
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="mariachi2Name">Cumpleaños</h3>
-        <p class="service-price" id="mariachi2Price">$80</p>
-        <p class="service-description" id="mariachi2Desc">Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.</p>
+        <h3 class="service-name" id="mariachi2Name">12 Canciones</h3>
+        <p class="service-price" id="mariachi2Price">$60</p>
+        <p class="service-description" id="mariachi2Desc">Perfecto para celebraciones. 12 canciones con 2 trompetas, vihuela, guitarrón y voz femenina.</p>
        </div>
       </div><!-- Mariachi Service 3 -->
-      <div class="service-card">
-       <div class="service-image-placeholder">
-        Foto de serenatas aquí
+      <div class="service-card"><img src="https://i.imgur.com/Tnuq2EZ.jpg" alt="9 Canciones" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        🎺 9 Canciones Mariachi
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="mariachi3Name">Serenatas</h3>
-        <p class="service-price" id="mariachi3Price">$60</p>
-        <p class="service-description" id="mariachi3Desc">Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.</p>
+        <h3 class="service-name" id="mariachi3Name">9 Canciones</h3>
+        <p class="service-price" id="mariachi3Price">$50</p>
+        <p class="service-description" id="mariachi3Desc">Ideal para eventos medianos. 9 canciones tradicionales mexicanas con todo el grupo.</p>
        </div>
       </div><!-- Mariachi Service 4 -->
-      <div class="service-card">
-       <div class="service-image-placeholder">
-        Foto de velorios aquí
+      <div class="service-card"><img src="https://i.imgur.com/ZgqivUJ.jpg" alt="6 Canciones" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        🎺 6 Canciones Mariachi
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="mariachi4Name">Velorios</h3>
-        <p class="service-price" id="mariachi4Price">$80</p>
-        <p class="service-description" id="mariachi4Desc">Música solemne y tradicional para honrar a tus seres queridos. Repertorio respetuoso.</p>
+        <h3 class="service-name" id="mariachi4Name">6 Canciones</h3>
+        <p class="service-price" id="mariachi4Price">$40</p>
+        <p class="service-description" id="mariachi4Desc">Perfecto para serenatas. 6 canciones románticas o tradicionales a tu gusto.</p>
        </div>
       </div>
      </div>
     </div><!-- Retreta Services -->
     <div class="service-group" id="retreta-services">
+     <p class="section-subtitle">🥁 5 músicos: 2 trompetas, bombo, redoblante y charrasca - Plan B 🥁</p>
      <div class="services-grid"><!-- Retreta Service 1 -->
-      <div class="service-card">
-       <div class="service-image-placeholder">
-        Foto de RETRETA en bodas aquí
+      <div class="service-card"><img src="https://i.imgur.com/rEmE1IF.jpg" alt="12 Canciones Retreta" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        🥁 12 Canciones Retreta
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="retreta1Name">Bodas</h3>
-        <p class="service-price" id="retreta1Price">$100</p>
-        <p class="service-description" id="retreta1Desc">Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.</p>
+        <h3 class="service-name" id="retreta1Name">12 Canciones</h3>
+        <p class="service-price" id="retreta1Price">$60</p>
+        <p class="service-description" id="retreta1Desc">5 músicos con 2 trompetas, bombo, redoblante y charrasca. Cantamos y hacemos show completo.</p>
        </div>
       </div><!-- Retreta Service 2 -->
-      <div class="service-card">
-       <div class="service-image-placeholder">
-        Foto de RETRETA en cumpleaños aquí
+      <div class="service-card"><img src="https://i.imgur.com/Jc5DMsa.jpg" alt="9 Canciones Retreta" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        🥁 9 Canciones Retreta
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="retreta2Name">Cumpleaños</h3>
-        <p class="service-price" id="retreta2Price">$80</p>
-        <p class="service-description" id="retreta2Desc">Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.</p>
+        <h3 class="service-name" id="retreta2Name">9 Canciones</h3>
+        <p class="service-price" id="retreta2Price">$50</p>
+        <p class="service-description" id="retreta2Desc">Retreta Ritmo y Alegría. Música en vivo con instrumentos de viento y percusión. Show incluido.</p>
        </div>
       </div><!-- Retreta Service 3 -->
-      <div class="service-card">
-       <div class="service-image-placeholder">
-        Foto de RETRETA en serenatas aquí
+      <div class="service-card"><img src="https://i.imgur.com/OMbpOtW.jpg" alt="6 Canciones Retreta" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        🥁 6 Canciones Retreta
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="retreta3Name">Serenatas</h3>
-        <p class="service-price" id="retreta3Price">$60</p>
-        <p class="service-description" id="retreta3Desc">Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.</p>
+        <h3 class="service-name" id="retreta3Name">6 Canciones</h3>
+        <p class="service-price" id="retreta3Price">$40</p>
+        <p class="service-description" id="retreta3Desc">Presentación corta pero alegre. 6 canciones con nuestro grupo completo de retreta.</p>
        </div>
-      </div><!-- Retreta Service 4 -->
-      <div class="service-card">
+      </div><!-- Retreta Service 4 - Combo Special Card -->
+      <div class="service-card combo-special-card">
        <div class="service-image-placeholder">
-        Foto de RETRETA en eventos públicos aquí
+        ✨💫✨
        </div>
        <div class="service-content">
-        <h3 class="service-name" id="retreta4Name">Retreta Ritmo y Alegría</h3>
-        <p class="service-price" id="retreta4Price">$100</p>
-        <p class="service-description" id="retreta4Desc">Para eventos públicos, plazas y fiestas patronales. 4 horas de música continua.</p>
+        <h3 class="service-name">Ver Combos Especiales</h3>
+        <p class="service-price">🎉</p>
+        <p class="service-description">Consulta más abajo nuestros paquetes combinados con mariachi, retreta y osita sorpresa.</p>
        </div>
+      </div>
+     </div>
+    </div><!-- Osita Sorpresa Section -->
+    <div class="osita-section">
+     <h2 class="osita-title">🐻 Osita Sorpresa - Plan C 🐻</h2>
+     <div class="osita-options">
+      <div class="osita-card"><img src="https://i.imgur.com/opDqe1L.jpg" alt="Osita con Flores" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="osita-icon" style="display: none;">
+        🐻💐
+       </div>
+       <h3 class="osita-name">Osita con Flores</h3>
+       <p class="osita-price">$35</p>
+       <p class="osita-desc">Osita sorpresa con arreglo de flores, show con corneta y música especial para el momento. Incluye fotos.</p>
+      </div>
+      <div class="osita-card"><img src="https://i.imgur.com/5ZR60AB.jpg" alt="Osita Simple" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="osita-icon" style="display: none;">
+        🐻🎵
+       </div>
+       <h3 class="osita-name">Osita Simple</h3>
+       <p class="osita-price">$30</p>
+       <p class="osita-desc">Osita sorpresa sin flores. Incluye show, música de fondo y sesión de fotos.</p>
+      </div>
+     </div>
+    </div><!-- Combos Section -->
+    <div class="combos-section">
+     <h2 class="combos-title">🎉 Combos Especiales - Plan D 🎉</h2>
+     <p class="combos-subtitle">Los dos servicios, uno primero y en 15 minutos el siguiente mientras nos cambiamos de vestuario</p>
+     <div class="combo-item">
+      <div class="combo-number">
+       1
+      </div>
+      <div class="combo-details">
+       <p class="combo-name">🎺 Mariachi 6 canciones + 🥁 Retreta 6 canciones</p>
+       <p class="combo-price">$70</p>
+      </div>
+     </div>
+     <div class="combo-item">
+      <div class="combo-number">
+       2
+      </div>
+      <div class="combo-details">
+       <p class="combo-name">🎺 Mariachi 6 canciones + 🐻 Osita sorpresa + 💐 Flores</p>
+       <p class="combo-price">$70</p>
+      </div>
+     </div>
+     <div class="combo-item">
+      <div class="combo-number">
+       3
+      </div>
+      <div class="combo-details">
+       <p class="combo-name">🥁 Retreta 6 canciones + 🐻 Osita sorpresa + 💐 Flores</p>
+       <p class="combo-price">$70</p>
+      </div>
+     </div>
+     <div class="combo-item">
+      <div class="combo-number">
+       4
+      </div>
+      <div class="combo-details">
+       <p class="combo-name">🎺 Mariachi 6 canciones + 🥁 Retreta 6 canciones + 🐻 Osita + 💐 Flores</p>
+       <p class="combo-price">$100</p>
       </div>
      </div>
     </div><!-- Gallery Section -->
     <div class="gallery-section">
      <h2 class="section-title">Galería</h2>
-     <div class="gallery-grid">
-      <div class="gallery-placeholder">
-       Foto galería 1
-      </div>
-      <div class="gallery-placeholder">
-       Foto galería 2
-      </div>
-      <div class="gallery-placeholder">
-       Foto galería 3
-      </div>
-      <div class="gallery-placeholder">
-       Foto galería 4
-      </div>
+     <div class="gallery-grid"><img src="https://i.imgur.com/Whdvzip.jpg" alt="Galería 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; border: 3px solid #d4af37; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onerror="this.style.display='none';"> <img src="https://i.imgur.com/GM7LKAv.jpg" alt="Galería 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; border: 3px solid #d4af37; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onerror="this.style.display='none';"> <img src="https://i.imgur.com/QxHODCA.jpg" alt="Galería 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; border: 3px solid #d4af37; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onerror="this.style.display='none';"> <img src="https://i.imgur.com/wTdjGnp.jpg" alt="Galería 4" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; border: 3px solid #d4af37; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);" onerror="this.style.display='none';">
      </div>
     </div><!-- Contact Section -->
     <div class="contact-section">
      <h2 class="contact-title">¡Contáctanos!</h2>
-     <p class="phone-number" id="phoneNumber">0412-4848496</p><button class="whatsapp-button" id="whatsappBtn" onclick="openWhatsAppMenu()">Escríbenos por WhatsApp</button>
+     <p class="phone-number" id="phoneNumber">0412-4848496 / 0424-8231851</p><button class="whatsapp-button" id="whatsappBtn" onclick="openWhatsAppMenu()">Escríbenos por WhatsApp</button>
     </div>
    </main>
    <footer class="footer">
-    <p>🎺 Música tradicional mexicana de calidad 🎺</p>
+    <p>🎺 Mariachi Show Mexicano - Retreta Ritmo y Alegría - Ositos Sorpresa Barcelona 🎺</p>
+    <p style="margin-top: 10px; font-weight: 700; color: #c8102e;">¡Somos Tu Mejor Elección!</p>
    </footer><!-- WhatsApp Floating Button -->
    <div class="whatsapp-float" onclick="openWhatsAppMenu()" aria-label="Contactar por WhatsApp">
     <div class="whatsapp-pulse"></div>
@@ -658,60 +903,60 @@
    <div class="whatsapp-menu-overlay" id="whatsappMenuOverlay" onclick="closeWhatsAppMenu(event)">
     <div class="whatsapp-menu" onclick="event.stopPropagation()"><button class="whatsapp-menu-close" onclick="closeWhatsAppMenu()">×</button>
      <h3 class="whatsapp-menu-title">¿Qué servicio te interesa?</h3>
-     <p class="whatsapp-menu-subtitle">Elige una opción para contactarnos por WhatsApp</p><a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20sus%20servicios%20para%20una%20*BODA*.%20Quisiera%20información%20sobre%20precios%2C%20repertorio%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
-      <div class="whatsapp-option-icon">
-       💒
-      </div>
-      <div class="whatsapp-option-text">
-       <div class="whatsapp-option-title">
-        Bodas
-       </div>
-       <div class="whatsapp-option-desc">
-        Música para tu ceremonia y recepción
-       </div>
-      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20sus%20servicios%20para%20un%20*CUMPLEAÑOS*.%20Quisiera%20información%20sobre%20precios%2C%20repertorio%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
-      <div class="whatsapp-option-icon">
-       🎂
-      </div>
-      <div class="whatsapp-option-text">
-       <div class="whatsapp-option-title">
-        Cumpleaños
-       </div>
-       <div class="whatsapp-option-desc">
-        Celebra tu día especial con música
-       </div>
-      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20una%20*SERENATA*.%20Quisiera%20información%20sobre%20precios%2C%20canciones%20disponibles%20y%20horarios.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
-      <div class="whatsapp-option-icon">
-       🎵
-      </div>
-      <div class="whatsapp-option-text">
-       <div class="whatsapp-option-title">
-        Serenatas
-       </div>
-       <div class="whatsapp-option-desc">
-        Sorprende con una serenata romántica
-       </div>
-      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20sus%20servicios%20para%20un%20*VELORIO*.%20Quisiera%20información%20sobre%20el%20repertorio%20solemne%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
-      <div class="whatsapp-option-icon">
-       🕯️
-      </div>
-      <div class="whatsapp-option-text">
-       <div class="whatsapp-option-title">
-        Velorios
-       </div>
-       <div class="whatsapp-option-desc">
-        Música solemne y respetuosa
-       </div>
-      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20la%20*RETRETA%20RITMO%20Y%20ALEGRÍA*.%20Quisiera%20información%20sobre%20precios%20para%20eventos%20públicos%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+     <p class="whatsapp-menu-subtitle">Elige una opción para contactarnos por WhatsApp</p><a href="https://wa.me/584124848496?text=Hola%20Me%20interesa%20contratar%20el%20MARIACHI%20SHOW%20MEXICANO.%20Quisiera%20informacion%20sobre%20precios%20y%20disponibilidad.%20Gracias" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
       <div class="whatsapp-option-icon">
        🎺
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Mariachi Show Mexicano
+       </div>
+       <div class="whatsapp-option-desc">
+        5 músicos con trompetas y voz femenina
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola%20Me%20interesa%20contratar%20la%20RETRETA%20RITMO%20Y%20ALEGRIA.%20Quisiera%20informacion%20sobre%20precios%20y%20disponibilidad.%20Gracias" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🥁
       </div>
       <div class="whatsapp-option-text">
        <div class="whatsapp-option-title">
         Retreta Ritmo y Alegría
        </div>
        <div class="whatsapp-option-desc">
-        Para eventos públicos y fiestas
+        5 músicos con trompetas y percusión
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola%20Me%20interesa%20contratar%20la%20OSITA%20SORPRESA.%20Quisiera%20informacion%20sobre%20el%20servicio%20y%20disponibilidad.%20Gracias" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🐻
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Osita Sorpresa
+       </div>
+       <div class="whatsapp-option-desc">
+        Con o sin arreglo de flores
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola%20Me%20interesan%20los%20COMBOS%20ESPECIALES.%20Quisiera%20informacion%20sobre%20los%20paquetes%20combinados%20y%20disponibilidad.%20Gracias" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🎉
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Combos Especiales
+       </div>
+       <div class="whatsapp-option-desc">
+        Mariachi + Retreta + Osita
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola%20Quisiera%20mas%20informacion%20sobre%20sus%20servicios%20musicales.%20Gracias" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       📱
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Consulta General
+       </div>
+       <div class="whatsapp-option-desc">
+        Información sobre todos los servicios
        </div>
       </div></a>
     </div>
@@ -742,32 +987,32 @@
 
         const defaultConfig = {
             band_name: "Mariachi Show Mexicano",
-            tagline: "Música tradicional mexicana para toda ocasión",
-            mariachi1_name: "Bodas",
-            mariachi1_price: "$100",
-            mariachi1_desc: "Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.",
-            mariachi2_name: "Cumpleaños",
-            mariachi2_price: "$80",
-            mariachi2_desc: "Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.",
-            mariachi3_name: "Serenatas",
-            mariachi3_price: "$60",
-            mariachi3_desc: "Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.",
-            mariachi4_name: "Velorios",
-            mariachi4_price: "$80",
-            mariachi4_desc: "Música solemne y tradicional para honrar a tus seres queridos. Repertorio respetuoso.",
-            retreta1_name: "Bodas",
-            retreta1_price: "$100",
-            retreta1_desc: "Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.",
-            retreta2_name: "Cumpleaños",
-            retreta2_price: "$80",
-            retreta2_desc: "Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.",
-            retreta3_name: "Serenatas",
-            retreta3_price: "$60",
-            retreta3_desc: "Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.",
-            retreta4_name: "Retreta Ritmo y Alegría",
+            tagline: "Música que llega al corazón y alegra cada momento especial",
+            mariachi1_name: "15 Canciones",
+            mariachi1_price: "$70",
+            mariachi1_desc: "El paquete más completo. 15 canciones a tu elección con nuestro mariachi de 5 músicos.",
+            mariachi2_name: "12 Canciones",
+            mariachi2_price: "$60",
+            mariachi2_desc: "Perfecto para celebraciones. 12 canciones con 2 trompetas, vihuela, guitarrón y voz femenina.",
+            mariachi3_name: "9 Canciones",
+            mariachi3_price: "$50",
+            mariachi3_desc: "Ideal para eventos medianos. 9 canciones tradicionales mexicanas con todo el grupo.",
+            mariachi4_name: "6 Canciones",
+            mariachi4_price: "$40",
+            mariachi4_desc: "Perfecto para serenatas. 6 canciones románticas o tradicionales a tu gusto.",
+            retreta1_name: "12 Canciones",
+            retreta1_price: "$60",
+            retreta1_desc: "5 músicos con 2 trompetas, bombo, redoblante y charrasca. Cantamos y hacemos show completo.",
+            retreta2_name: "9 Canciones",
+            retreta2_price: "$50",
+            retreta2_desc: "Retreta Ritmo y Alegría. Música en vivo con instrumentos de viento y percusión. Show incluido.",
+            retreta3_name: "6 Canciones",
+            retreta3_price: "$40",
+            retreta3_desc: "Presentación corta pero alegre. 6 canciones con nuestro grupo completo de retreta.",
+            retreta4_name: "Combo Especial",
             retreta4_price: "$100",
-            retreta4_desc: "Para eventos públicos, plazas y fiestas patronales. 4 horas de música continua.",
-            phone_number: "0412-4848496",
+            retreta4_desc: "¡Lo mejor de todo! Mariachi 6 canciones + Retreta 6 canciones + Osita Sorpresa + Arreglo de Flores 💐",
+            phone_number: "0412-4848496 / 0424-8231851",
             whatsapp_text: "Escríbenos por WhatsApp"
         };
 
@@ -804,10 +1049,6 @@
             document.getElementById('retreta3Name').textContent = config.retreta3_name || defaultConfig.retreta3_name;
             document.getElementById('retreta3Price').textContent = config.retreta3_price || defaultConfig.retreta3_price;
             document.getElementById('retreta3Desc').textContent = config.retreta3_desc || defaultConfig.retreta3_desc;
-            
-            document.getElementById('retreta4Name').textContent = config.retreta4_name || defaultConfig.retreta4_name;
-            document.getElementById('retreta4Price').textContent = config.retreta4_price || defaultConfig.retreta4_price;
-            document.getElementById('retreta4Desc').textContent = config.retreta4_desc || defaultConfig.retreta4_desc;
             
             document.getElementById('phoneNumber').textContent = config.phone_number || defaultConfig.phone_number;
             document.getElementById('whatsappBtn').textContent = config.whatsapp_text || defaultConfig.whatsapp_text;
@@ -847,9 +1088,6 @@
                 ["retreta3_name", config.retreta3_name || defaultConfig.retreta3_name],
                 ["retreta3_price", config.retreta3_price || defaultConfig.retreta3_price],
                 ["retreta3_desc", config.retreta3_desc || defaultConfig.retreta3_desc],
-                ["retreta4_name", config.retreta4_name || defaultConfig.retreta4_name],
-                ["retreta4_price", config.retreta4_price || defaultConfig.retreta4_price],
-                ["retreta4_desc", config.retreta4_desc || defaultConfig.retreta4_desc],
                 ["phone_number", config.phone_number || defaultConfig.phone_number],
                 ["whatsapp_text", config.whatsapp_text || defaultConfig.whatsapp_text]
             ]);
@@ -864,5 +1102,5 @@
             });
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a5b9cdbf6ebcdcb',t:'MTc2NDM1MTIzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a5c5cf7d070cdcb',t:'MTc2NDM1OTEwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
