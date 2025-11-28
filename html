@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Digital Mariachis</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #ffffff;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .app-wrapper {
+            width: 100%;
+            min-height: 100%;
+            padding: 0;
+        }
+
+        /* Header con imagen placeholder */
+        .header {
+            background: linear-gradient(135deg, #c8102e 0%, #8b0000 100%);
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 8px solid #d4af37;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .band-name {
+            font-size: 56px;
+            font-weight: 700;
+            color: #d4af37;
+            margin: 0 0 15px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            font-family: 'Rye', cursive;
+        }
+
+        .tagline {
+            font-size: 22px;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        /* Logo section in white area */
+        .logo-section {
+            text-align: center;
+            padding: 50px 20px 10px;
+            background: #ffffff;
+        }
+
+        .main-logo {
+            max-width: 350px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+        }
+
+        /* Decorative line */
+        .decorative-line {
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #d4af37, #c8102e, #d4af37, transparent);
+            margin: 20px auto 10px;
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px 60px;
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 42px;
+            color: #8b0000;
+            text-align: center;
+            margin: 0 0 40px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border: 3px solid #d4af37;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(200, 16, 46, 0.3);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-image-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #c8102e, #8b0000);
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 16px;
+            text-align: center;
+            padding: 20px;
+            font-weight: 600;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-name {
+            font-size: 26px;
+            color: #8b0000;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-price {
+            font-size: 36px;
+            color: #c8102e;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .service-description {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* Gallery placeholder */
+        .gallery-section {
+            margin: 60px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-placeholder {
+            height: 250px;
+            background: linear-gradient(135deg, #c8102e, #8b0000);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 15px;
+            text-align: center;
+            padding: 20px;
+            border: 3px solid #d4af37;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: linear-gradient(135deg, #c8102e, #8b0000);
+            border-radius: 16px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 4px solid #d4af37;
+        }
+
+        .contact-title {
+            font-size: 36px;
+            color: #d4af37;
+            margin: 0 0 25px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .phone-number {
+            font-size: 32px;
+            color: white;
+            margin: 0 0 30px 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-button::before {
+            content: '📱 ';
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.7);
+        }
+
+        .whatsapp-float svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .whatsapp-pulse {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* WhatsApp Menu Modal */
+        .whatsapp-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-menu-overlay.active {
+            display: flex;
+        }
+
+        .whatsapp-menu {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .whatsapp-menu-title {
+            font-size: 28px;
+            color: #8b0000;
+            margin: 0 0 10px 0;
+            text-align: center;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .whatsapp-menu-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 30px 0;
+            text-align: center;
+        }
+
+        .whatsapp-menu-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #8b0000;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .whatsapp-menu-close:hover {
+            background: #f0f0f0;
+        }
+
+        .whatsapp-option {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f7fafc, #ffffff);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .whatsapp-option:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, #fff8f0, #ffffff);
+            border-color: #c8102e;
+            box-shadow: 0 4px 12px rgba(200, 16, 46, 0.2);
+        }
+
+        .whatsapp-option-icon {
+            font-size: 32px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-option-text {
+            flex-grow: 1;
+        }
+
+        .whatsapp-option-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #8b0000;
+            margin: 0 0 4px 0;
+        }
+
+        .whatsapp-option-desc {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b0000;
+            font-size: 14px;
+            background: #fff8f0;
+            font-weight: 500;
+        }
+
+        /* Service type selector */
+        .service-selector {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .selector-buttons {
+            display: inline-flex;
+            gap: 15px;
+            background: #f7fafc;
+            padding: 8px;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .selector-btn {
+            padding: 12px 35px;
+            border: 2px solid #d4af37;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #8b0000;
+        }
+
+        .selector-btn.active {
+            background: linear-gradient(135deg, #c8102e, #8b0000);
+            color: #d4af37;
+            box-shadow: 0 4px 12px rgba(200, 16, 46, 0.4);
+            border-color: #d4af37;
+        }
+
+        .selector-btn:hover:not(.active) {
+            background: #fff8f0;
+            border-color: #c8102e;
+        }
+
+        .service-group {
+            display: none;
+        }
+
+        .service-group.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .main-logo {
+                max-width: 250px;
+            }
+
+            .band-name {
+                font-size: 38px;
+            }
+            
+            .tagline {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            .selector-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="app-wrapper">
+   <header class="header">
+    <div class="header-content">
+     <h1 class="band-name" id="bandName">Mariachi Los Guadalupanos</h1>
+     <p class="tagline" id="tagline">Música tradicional mexicana para toda ocasión</p>
+    </div>
+   </header>
+   <div class="logo-section"><img src="https://i.imgur.com/15WUNSg.png" alt="Logo Mariachi" class="main-logo" onerror="this.style.display='none';">
+    <div class="decorative-line"></div>
+   </div>
+   <main class="main-content">
+    <h2 class="section-title">Nuestros Servicios y Tarifas</h2>
+    <div class="service-selector">
+     <div class="selector-buttons"><button class="selector-btn active" onclick="switchService('mariachi')">Mariachi</button> <button class="selector-btn" onclick="switchService('retreta')">Retreta Ritmo y Alegría</button>
+     </div>
+    </div><!-- Mariachi Services -->
+    <div class="service-group active" id="mariachi-services">
+     <div class="services-grid"><!-- Mariachi Service 1 -->
+      <div class="service-card"><img src="https://i.imgur.com/1Jb96As.png" alt="Bodas" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        Foto de bodas aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="mariachi1Name">Bodas</h3>
+        <p class="service-price" id="mariachi1Price">$100</p>
+        <p class="service-description" id="mariachi1Desc">Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.</p>
+       </div>
+      </div><!-- Mariachi Service 2 -->
+      <div class="service-card"><img src="https://i.imgur.com/2yVfO3c.png" alt="Cumpleaños" class="service-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="service-image-placeholder" style="display: none;">
+        Foto de cumpleaños aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="mariachi2Name">Cumpleaños</h3>
+        <p class="service-price" id="mariachi2Price">$80</p>
+        <p class="service-description" id="mariachi2Desc">Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.</p>
+       </div>
+      </div><!-- Mariachi Service 3 -->
+      <div class="service-card">
+       <div class="service-image-placeholder">
+        Foto de serenatas aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="mariachi3Name">Serenatas</h3>
+        <p class="service-price" id="mariachi3Price">$60</p>
+        <p class="service-description" id="mariachi3Desc">Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.</p>
+       </div>
+      </div><!-- Mariachi Service 4 -->
+      <div class="service-card">
+       <div class="service-image-placeholder">
+        Foto de velorios aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="mariachi4Name">Velorios</h3>
+        <p class="service-price" id="mariachi4Price">$80</p>
+        <p class="service-description" id="mariachi4Desc">Música solemne y tradicional para honrar a tus seres queridos. Repertorio respetuoso.</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- Retreta Services -->
+    <div class="service-group" id="retreta-services">
+     <div class="services-grid"><!-- Retreta Service 1 -->
+      <div class="service-card">
+       <div class="service-image-placeholder">
+        Foto de RETRETA en bodas aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="retreta1Name">Bodas</h3>
+        <p class="service-price" id="retreta1Price">$100</p>
+        <p class="service-description" id="retreta1Desc">Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.</p>
+       </div>
+      </div><!-- Retreta Service 2 -->
+      <div class="service-card">
+       <div class="service-image-placeholder">
+        Foto de RETRETA en cumpleaños aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="retreta2Name">Cumpleaños</h3>
+        <p class="service-price" id="retreta2Price">$80</p>
+        <p class="service-description" id="retreta2Desc">Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.</p>
+       </div>
+      </div><!-- Retreta Service 3 -->
+      <div class="service-card">
+       <div class="service-image-placeholder">
+        Foto de RETRETA en serenatas aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="retreta3Name">Serenatas</h3>
+        <p class="service-price" id="retreta3Price">$60</p>
+        <p class="service-description" id="retreta3Desc">Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.</p>
+       </div>
+      </div><!-- Retreta Service 4 -->
+      <div class="service-card">
+       <div class="service-image-placeholder">
+        Foto de RETRETA en eventos públicos aquí
+       </div>
+       <div class="service-content">
+        <h3 class="service-name" id="retreta4Name">Retreta Ritmo y Alegría</h3>
+        <p class="service-price" id="retreta4Price">$100</p>
+        <p class="service-description" id="retreta4Desc">Para eventos públicos, plazas y fiestas patronales. 4 horas de música continua.</p>
+       </div>
+      </div>
+     </div>
+    </div><!-- Gallery Section -->
+    <div class="gallery-section">
+     <h2 class="section-title">Galería</h2>
+     <div class="gallery-grid">
+      <div class="gallery-placeholder">
+       Foto galería 1
+      </div>
+      <div class="gallery-placeholder">
+       Foto galería 2
+      </div>
+      <div class="gallery-placeholder">
+       Foto galería 3
+      </div>
+      <div class="gallery-placeholder">
+       Foto galería 4
+      </div>
+     </div>
+    </div><!-- Contact Section -->
+    <div class="contact-section">
+     <h2 class="contact-title">¡Contáctanos!</h2>
+     <p class="phone-number" id="phoneNumber">0412-4848496</p><button class="whatsapp-button" id="whatsappBtn" onclick="openWhatsAppMenu()">Escríbenos por WhatsApp</button>
+    </div>
+   </main>
+   <footer class="footer">
+    <p>🎺 Música tradicional mexicana de calidad 🎺</p>
+   </footer><!-- WhatsApp Floating Button -->
+   <div class="whatsapp-float" onclick="openWhatsAppMenu()" aria-label="Contactar por WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.408-5.234-0.292-0.508c-1.235-2.144-1.888-4.596-1.888-7.104 0-7.66 6.235-13.895 13.895-13.895s13.895 6.235 13.895 13.895c0 7.66-6.235 13.6-13.895 13.6zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.231-0.402 0.26-0.748 0.087-0.346-0.174-1.461-0.537-2.785-1.711-1.031-0.919-1.727-2.048-1.929-2.394-0.201-0.346-0.022-0.533 0.152-0.705 0.156-0.156 0.346-0.402 0.518-0.605 0.174-0.201 0.231-0.346 0.346-0.576 0.117-0.231 0.058-0.433-0.028-0.605-0.087-0.174-0.776-1.866-1.065-2.558-0.28-0.672-0.567-0.58-0.776-0.591-0.201-0.010-0.433-0.012-0.663-0.012s-0.605 0.087-0.922 0.433c-0.316 0.346-1.209 1.179-1.209 2.874s1.238 3.335 1.41 3.565c0.174 0.231 2.444 3.732 5.922 5.234 0.827 0.357 1.473 0.571 1.977 0.73 0.831 0.264 1.587 0.227 2.183 0.138 0.667-0.099 2.049-0.835 2.338-1.642 0.289-0.808 0.289-1.501 0.201-1.642-0.087-0.145-0.316-0.231-0.663-0.404z" />
+    </svg>
+   </div><!-- WhatsApp Menu Modal -->
+   <div class="whatsapp-menu-overlay" id="whatsappMenuOverlay" onclick="closeWhatsAppMenu(event)">
+    <div class="whatsapp-menu" onclick="event.stopPropagation()"><button class="whatsapp-menu-close" onclick="closeWhatsAppMenu()">×</button>
+     <h3 class="whatsapp-menu-title">¿Qué servicio te interesa?</h3>
+     <p class="whatsapp-menu-subtitle">Elige una opción para contactarnos por WhatsApp</p><a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20sus%20servicios%20para%20una%20*BODA*.%20Quisiera%20información%20sobre%20precios%2C%20repertorio%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       💒
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Bodas
+       </div>
+       <div class="whatsapp-option-desc">
+        Música para tu ceremonia y recepción
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20sus%20servicios%20para%20un%20*CUMPLEAÑOS*.%20Quisiera%20información%20sobre%20precios%2C%20repertorio%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🎂
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Cumpleaños
+       </div>
+       <div class="whatsapp-option-desc">
+        Celebra tu día especial con música
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20una%20*SERENATA*.%20Quisiera%20información%20sobre%20precios%2C%20canciones%20disponibles%20y%20horarios.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🎵
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Serenatas
+       </div>
+       <div class="whatsapp-option-desc">
+        Sorprende con una serenata romántica
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20sus%20servicios%20para%20un%20*VELORIO*.%20Quisiera%20información%20sobre%20el%20repertorio%20solemne%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🕯️
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Velorios
+       </div>
+       <div class="whatsapp-option-desc">
+        Música solemne y respetuosa
+       </div>
+      </div></a> <a href="https://wa.me/584124848496?text=Hola!%20Me%20interesa%20contratar%20la%20*RETRETA%20RITMO%20Y%20ALEGRÍA*.%20Quisiera%20información%20sobre%20precios%20para%20eventos%20públicos%20y%20disponibilidad.%20Gracias!" target="_blank" rel="noopener noreferrer" class="whatsapp-option">
+      <div class="whatsapp-option-icon">
+       🎺
+      </div>
+      <div class="whatsapp-option-text">
+       <div class="whatsapp-option-title">
+        Retreta Ritmo y Alegría
+       </div>
+       <div class="whatsapp-option-desc">
+        Para eventos públicos y fiestas
+       </div>
+      </div></a>
+    </div>
+   </div>
+  </div>
+  <script>
+        function switchService(type) {
+            // Update buttons
+            const buttons = document.querySelectorAll('.selector-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update service groups
+            const groups = document.querySelectorAll('.service-group');
+            groups.forEach(group => group.classList.remove('active'));
+            document.getElementById(type + '-services').classList.add('active');
+        }
+
+        function openWhatsAppMenu() {
+            document.getElementById('whatsappMenuOverlay').classList.add('active');
+        }
+
+        function closeWhatsAppMenu(event) {
+            if (!event || event.target.id === 'whatsappMenuOverlay' || event.target.classList.contains('whatsapp-menu-close')) {
+                document.getElementById('whatsappMenuOverlay').classList.remove('active');
+            }
+        }
+
+        const defaultConfig = {
+            band_name: "Mariachi Show Mexicano",
+            tagline: "Música tradicional mexicana para toda ocasión",
+            mariachi1_name: "Bodas",
+            mariachi1_price: "$100",
+            mariachi1_desc: "Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.",
+            mariachi2_name: "Cumpleaños",
+            mariachi2_price: "$80",
+            mariachi2_desc: "Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.",
+            mariachi3_name: "Serenatas",
+            mariachi3_price: "$60",
+            mariachi3_desc: "Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.",
+            mariachi4_name: "Velorios",
+            mariachi4_price: "$80",
+            mariachi4_desc: "Música solemne y tradicional para honrar a tus seres queridos. Repertorio respetuoso.",
+            retreta1_name: "Bodas",
+            retreta1_price: "$100",
+            retreta1_desc: "Acompañamiento musical completo durante tu ceremonia y recepción. 3 horas de música tradicional y romántica.",
+            retreta2_name: "Cumpleaños",
+            retreta2_price: "$80",
+            retreta2_desc: "Celebra tu día especial con música alegre y festiva. 2 horas de repertorio variado.",
+            retreta3_name: "Serenatas",
+            retreta3_price: "$60",
+            retreta3_desc: "Sorprende a esa persona especial. 45 minutos con 6 canciones a elección.",
+            retreta4_name: "Retreta Ritmo y Alegría",
+            retreta4_price: "$100",
+            retreta4_desc: "Para eventos públicos, plazas y fiestas patronales. 4 horas de música continua.",
+            phone_number: "0412-4848496",
+            whatsapp_text: "Escríbenos por WhatsApp"
+        };
+
+        async function onConfigChange(config) {
+            document.getElementById('bandName').textContent = config.band_name || defaultConfig.band_name;
+            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+            
+            // Mariachi services
+            document.getElementById('mariachi1Name').textContent = config.mariachi1_name || defaultConfig.mariachi1_name;
+            document.getElementById('mariachi1Price').textContent = config.mariachi1_price || defaultConfig.mariachi1_price;
+            document.getElementById('mariachi1Desc').textContent = config.mariachi1_desc || defaultConfig.mariachi1_desc;
+            
+            document.getElementById('mariachi2Name').textContent = config.mariachi2_name || defaultConfig.mariachi2_name;
+            document.getElementById('mariachi2Price').textContent = config.mariachi2_price || defaultConfig.mariachi2_price;
+            document.getElementById('mariachi2Desc').textContent = config.mariachi2_desc || defaultConfig.mariachi2_desc;
+            
+            document.getElementById('mariachi3Name').textContent = config.mariachi3_name || defaultConfig.mariachi3_name;
+            document.getElementById('mariachi3Price').textContent = config.mariachi3_price || defaultConfig.mariachi3_price;
+            document.getElementById('mariachi3Desc').textContent = config.mariachi3_desc || defaultConfig.mariachi3_desc;
+            
+            document.getElementById('mariachi4Name').textContent = config.mariachi4_name || defaultConfig.mariachi4_name;
+            document.getElementById('mariachi4Price').textContent = config.mariachi4_price || defaultConfig.mariachi4_price;
+            document.getElementById('mariachi4Desc').textContent = config.mariachi4_desc || defaultConfig.mariachi4_desc;
+            
+            // Retreta services
+            document.getElementById('retreta1Name').textContent = config.retreta1_name || defaultConfig.retreta1_name;
+            document.getElementById('retreta1Price').textContent = config.retreta1_price || defaultConfig.retreta1_price;
+            document.getElementById('retreta1Desc').textContent = config.retreta1_desc || defaultConfig.retreta1_desc;
+            
+            document.getElementById('retreta2Name').textContent = config.retreta2_name || defaultConfig.retreta2_name;
+            document.getElementById('retreta2Price').textContent = config.retreta2_price || defaultConfig.retreta2_price;
+            document.getElementById('retreta2Desc').textContent = config.retreta2_desc || defaultConfig.retreta2_desc;
+            
+            document.getElementById('retreta3Name').textContent = config.retreta3_name || defaultConfig.retreta3_name;
+            document.getElementById('retreta3Price').textContent = config.retreta3_price || defaultConfig.retreta3_price;
+            document.getElementById('retreta3Desc').textContent = config.retreta3_desc || defaultConfig.retreta3_desc;
+            
+            document.getElementById('retreta4Name').textContent = config.retreta4_name || defaultConfig.retreta4_name;
+            document.getElementById('retreta4Price').textContent = config.retreta4_price || defaultConfig.retreta4_price;
+            document.getElementById('retreta4Desc').textContent = config.retreta4_desc || defaultConfig.retreta4_desc;
+            
+            document.getElementById('phoneNumber').textContent = config.phone_number || defaultConfig.phone_number;
+            document.getElementById('whatsappBtn').textContent = config.whatsapp_text || defaultConfig.whatsapp_text;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["band_name", config.band_name || defaultConfig.band_name],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["mariachi1_name", config.mariachi1_name || defaultConfig.mariachi1_name],
+                ["mariachi1_price", config.mariachi1_price || defaultConfig.mariachi1_price],
+                ["mariachi1_desc", config.mariachi1_desc || defaultConfig.mariachi1_desc],
+                ["mariachi2_name", config.mariachi2_name || defaultConfig.mariachi2_name],
+                ["mariachi2_price", config.mariachi2_price || defaultConfig.mariachi2_price],
+                ["mariachi2_desc", config.mariachi2_desc || defaultConfig.mariachi2_desc],
+                ["mariachi3_name", config.mariachi3_name || defaultConfig.mariachi3_name],
+                ["mariachi3_price", config.mariachi3_price || defaultConfig.mariachi3_price],
+                ["mariachi3_desc", config.mariachi3_desc || defaultConfig.mariachi3_desc],
+                ["mariachi4_name", config.mariachi4_name || defaultConfig.mariachi4_name],
+                ["mariachi4_price", config.mariachi4_price || defaultConfig.mariachi4_price],
+                ["mariachi4_desc", config.mariachi4_desc || defaultConfig.mariachi4_desc],
+                ["retreta1_name", config.retreta1_name || defaultConfig.retreta1_name],
+                ["retreta1_price", config.retreta1_price || defaultConfig.retreta1_price],
+                ["retreta1_desc", config.retreta1_desc || defaultConfig.retreta1_desc],
+                ["retreta2_name", config.retreta2_name || defaultConfig.retreta2_name],
+                ["retreta2_price", config.retreta2_price || defaultConfig.retreta2_price],
+                ["retreta2_desc", config.retreta2_desc || defaultConfig.retreta2_desc],
+                ["retreta3_name", config.retreta3_name || defaultConfig.retreta3_name],
+                ["retreta3_price", config.retreta3_price || defaultConfig.retreta3_price],
+                ["retreta3_desc", config.retreta3_desc || defaultConfig.retreta3_desc],
+                ["retreta4_name", config.retreta4_name || defaultConfig.retreta4_name],
+                ["retreta4_price", config.retreta4_price || defaultConfig.retreta4_price],
+                ["retreta4_desc", config.retreta4_desc || defaultConfig.retreta4_desc],
+                ["phone_number", config.phone_number || defaultConfig.phone_number],
+                ["whatsapp_text", config.whatsapp_text || defaultConfig.whatsapp_text]
+            ]);
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a5b9cdbf6ebcdcb',t:'MTc2NDM1MTIzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
